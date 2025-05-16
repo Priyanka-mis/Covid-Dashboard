@@ -1,0 +1,36 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #bfdbfe; 
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding: 1rem;
+}
+
+.app-container{
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.filters-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+
+}
+
+.stats-cards{
+    display: flex;
+    gap: 3rem;
+    margin-left: 2rem;
+    margin-top: 20px;
+    margin-right: 25rem;
+}
+
+.charts-container{
+  display: flex;
+  margin-top: 30px;
+}
