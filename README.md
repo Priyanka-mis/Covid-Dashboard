@@ -1,12 +1,33 @@
-# React + Vite
+# 🦠 COVID-19 Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive COVID-19 Dashboard built using **React** and **Vite**. This dashboard allows users to view real-time COVID-19 statistics like confirmed cases, recoveries, and deaths across different countries and regions.
 
-Currently, two official plugins are available:
+## 📊 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌍 Global and country-wise COVID-19 stats
+- 🔄 Live data fetched from public APIs
+- 📈 Charts and graphs for data visualization
+- 🔎 Search functionality for countries
+- 📱 Fully responsive design (mobile + desktop)
+- 💡 Clean UI with smooth user experience
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/) – Frontend library
+- [Vite](https://vitejs.dev/) – Build tool for fast development
+- [Axios / Fetch API](https://axios-http.com/) – For API requests
+- [Chart.js or Recharts](https://www.chartjs.org/) – To display charts
+- [CSS / Tailwind CSS](https://tailwindcss.com/) – For styling
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/covid-dashboard.git
+cd covid-dashboard
+npm install
