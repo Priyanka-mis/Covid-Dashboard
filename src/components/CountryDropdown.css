@@ -22,7 +22,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    
   }
   
   .country-flag {
@@ -32,8 +31,6 @@
   }
   .search-con{
     padding-left: 50px;
-    
-
   }
   
 

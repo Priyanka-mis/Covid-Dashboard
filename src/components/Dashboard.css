@@ -1,17 +1,13 @@
 .dashboard {
     max-width: 1200px;
-    /* margin: 0 auto; */
-    margin-left: 200px;
-    margin-right: 200px;
-    /* padding: 20px; */
+    margin: 0 auto;
+    padding: 20px;
     min-height: 100vh;
-    /* background-color: red; */
   }
   .main-dashboard{
     width: 950px;
     margin: auto;
     padding: 20px;
-
   }
   .dashboard h1 {
     color: #333;
@@ -52,18 +48,19 @@
   }
   
   .lineChart {
-    margin-top: 0;
+    margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 18px;
-    color: #555;
+    font-size: 15px;
+    color: black;
     margin-left: 36px;
   }
   .pieChart{
-    margin-top: 0;
+    margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 18px;
-    color: #555;
+    font-size: 15px;
+    color: black;
     margin-left: 101px;
+    
 
   }
   

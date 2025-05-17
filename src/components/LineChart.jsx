@@ -45,10 +45,7 @@ const LineChart = ({ data }) => {
   return (
     <div className="line-chart">
       <ResponsiveContainer width="100%" height={300}>
-      <RechartsLineChart
-  data={sampledData}
-  margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
->
+      <RechartsLineChart data={sampledData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
  
   <XAxis 
     dataKey="date"
@@ -76,7 +73,7 @@ const LineChart = ({ data }) => {
   <Line 
     type="monotone" 
     dataKey="recovered" 
-    stroke="#82ca9d" 
+    stroke="rgb(10 212 79)" 
     strokeWidth={2}
     dot={{ r: 3 }}
     name="Recovered"
@@ -84,7 +81,7 @@ const LineChart = ({ data }) => {
   <Line 
     type="monotone" 
     dataKey="deaths" 
-    stroke="#ff8042" 
+    stroke="red" 
     strokeWidth={2}
     dot={{ r: 3 }}
     name="Deaths"

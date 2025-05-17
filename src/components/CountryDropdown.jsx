@@ -28,7 +28,6 @@ const CountryDropdown = ({ countries, selectedCountry, onChange }) => {
     }),
   };
 
-  
   const formatOptionLabel = ({ label }) => (
     <div className="country-option">
       <span className='search-con'>{label}</span>
