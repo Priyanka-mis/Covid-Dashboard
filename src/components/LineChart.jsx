@@ -1,4 +1,3 @@
-
 // import React from "react";
 // import { Line } from "react-chartjs-2";
 // import {
@@ -11,6 +10,7 @@
 //   Tooltip,
 //   Legend,
 // } from "chart.js";
+// import "./LineChart.css";
 
 // ChartJS.register(
 //   CategoryScale,
@@ -23,25 +23,53 @@
 // );
 
 // const LineChart = ({ data }) => {
-//   if (!data) return null;
+//   if (!data || !data.cases || !data.recovered || !data.deaths) return null;
 
-//   const yearlyMap = {};
-//   Object.entries(data.cases).forEach(([dateStr, value]) => {
-//     const year = new Date(dateStr).getFullYear();
-//     yearlyMap[year] = value; 
-//   });
+//   const processYearlyData = (dataset) => {
+//     const yearly = {};
+//     Object.entries(dataset).forEach(([dateStr, value]) => {
+//       const year = new Date(dateStr).getFullYear();
+//       yearly[year] = value;
+//     });
+//     return yearly;
+//   };
 
+//   const cases = processYearlyData(data.cases);
+//   const recovered = processYearlyData(data.recovered);
+//   const deaths = processYearlyData(data.deaths);
 
-//   const years = Object.keys(yearlyMap);
-//   const values = Object.values(yearlyMap);
+//   const years = Array.from(
+//     new Set([
+//       ...Object.keys(cases),
+//       ...Object.keys(recovered),
+//       ...Object.keys(deaths),
+//     ])
+//   ).sort();
+
+//   const toMillions = (num) => +(num / 1_000_000).toFixed(2);
 
 //   const chartData = {
-//     labels: years,      
+//     labels: years,
 //     datasets: [
 //       {
 //         label: "Cases",
-//         data: values,  
-//         borderColor: "rgba(75,192,192,1)",
+//         data: years.map((y) => toMillions(cases[y] || 0)),
+//         borderColor: "blue",
+//         backgroundColor: "rgba(0,0,255,0.1)",
+//         fill: false,
+//       },
+//       {
+//         label: "Recovered",
+//         data: years.map((y) => toMillions(recovered[y] || 0)),
+//         borderColor: "green",
+//         backgroundColor: "rgba(0,255,0,0.1)",
+//         fill: false,
+//       },
+//       {
+//         label: "Deaths",
+//         data: years.map((y) => toMillions(deaths[y] || 0)),
+//         borderColor: "red",
+//         backgroundColor: "rgba(255,0,0,0.1)",
 //         fill: false,
 //       },
 //     ],
@@ -51,22 +79,36 @@
 //     responsive: true,
 //     plugins: {
 //       legend: { position: "top" },
-//       title: { display: true, text: "COVID-19 Cases Over Years" },
+    
+//       tooltip: {
+//         callbacks: {
+//           label: function (context) {
+//             return `${context.dataset.label}: ${context.parsed.y} M`;
+//           },
+//         },
+//       },
+//     },
+//     scales: {
+//       y: {
+//         beginAtZero: true,
+//         ticks: {
+//           callback: function (value) {
+//             return `${value} M`;
+//           },
+//         },
+//       },
 //     },
 //   };
 
 //   return (
 //     <div className="line-chart-container">
-//     <Line
-//       key={years.join()}      
-//       data={chartData}
-//       options={options}
-//     />
+//       <Line data={chartData} options={options} />
 //     </div>
 //   );
 // };
 
 // export default LineChart;
+
 
 
 
@@ -95,54 +137,55 @@ ChartJS.register(
 );
 
 const LineChart = ({ data }) => {
-  if (!data || !data.cases || !data.recovered || !data.deaths) return null;
+  if (!data || !data.cases || !data.recovered || !data.deaths) {
+    return <p>Loading or no data available</p>;
+  }
 
   const processYearlyData = (dataset) => {
-    const yearly = {};
+    const yearlyTotals = {};
     Object.entries(dataset).forEach(([dateStr, value]) => {
       const year = new Date(dateStr).getFullYear();
-      yearly[year] = value;
+      yearlyTotals[year] = (yearlyTotals[year] || 0) + value;
     });
-    return yearly;
+    return yearlyTotals;
   };
 
   const cases = processYearlyData(data.cases);
   const recovered = processYearlyData(data.recovered);
   const deaths = processYearlyData(data.deaths);
 
-  const years = Array.from(
-    new Set([
-      ...Object.keys(cases),
-      ...Object.keys(recovered),
-      ...Object.keys(deaths),
-    ])
+  const allYears = Array.from(
+    new Set([...Object.keys(cases), ...Object.keys(recovered), ...Object.keys(deaths)])
   ).sort();
 
   const toMillions = (num) => +(num / 1_000_000).toFixed(2);
 
   const chartData = {
-    labels: years,
+    labels: allYears,
     datasets: [
       {
         label: "Cases",
-        data: years.map((y) => toMillions(cases[y] || 0)),
+        data: allYears.map((y) => toMillions(cases[y] || 0)),
         borderColor: "blue",
         backgroundColor: "rgba(0,0,255,0.1)",
         fill: false,
+        tension: 0.3,
       },
       {
         label: "Recovered",
-        data: years.map((y) => toMillions(recovered[y] || 0)),
+        data: allYears.map((y) => toMillions(recovered[y] || 0)),
         borderColor: "green",
         backgroundColor: "rgba(0,255,0,0.1)",
         fill: false,
+        tension: 0.3,
       },
       {
         label: "Deaths",
-        data: years.map((y) => toMillions(deaths[y] || 0)),
+        data: allYears.map((y) => toMillions(deaths[y] || 0)),
         borderColor: "red",
         backgroundColor: "rgba(255,0,0,0.1)",
         fill: false,
+        tension: 0.3,
       },
     ],
   };
@@ -150,8 +193,9 @@ const LineChart = ({ data }) => {
   const options = {
     responsive: true,
     plugins: {
-      legend: { position: "top" },
-    
+      legend: {
+        position: "top",
+      },
       tooltip: {
         callbacks: {
           label: function (context) {

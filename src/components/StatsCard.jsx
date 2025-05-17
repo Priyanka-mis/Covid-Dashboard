@@ -16,3 +16,4 @@ const StatsCard = ({ label, value, className }) => {
 };
 
 export default StatsCard;
+
