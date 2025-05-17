@@ -1,0 +1,58 @@
+
+/* stats */
+
+
+.stats-card {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  
+}
+
+
+.stats-card h2 {
+  flex: 1.5;
+  background-color: #6366f1; 
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+.stats-card p {
+  flex: 1;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+.total h2 {
+  background-color: #6366f1;
+}
+
+.recovered h2 {
+  background-color: #10b981;
+}
+
+.death h2 {
+  background-color: #ef4444;
+}
+
+
+
+
+ 

@@ -1,0 +1,17 @@
+/* LineChart.css */
+
+.line-chart-container {
+  width: 40%;
+  max-width: 800px;
+  margin: 30px ;
+  padding: 30px;
+  background: #fdfdfd;
+  /* border-radius: 12px; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .line-chart-container {
+    padding: 10px;
+  }
+}

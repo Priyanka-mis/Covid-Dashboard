@@ -6,7 +6,7 @@ import PieChart from "./components/PieChart";
 import CountrySelector from "./components/CountrySelector";
 import DateFilter from "./components/DateFilter";  // typo fix kiya
 import { fetchHistoricalData, fetchCountries } from "./services/api";
-import "./App.css"; // Importing CSS for styling
+import "./App.css"; 
 
 const App = () => {
   const [selectedCountry, setSelectedCountry] = useState("usa");
@@ -69,5 +69,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
