@@ -1,17 +1,31 @@
-/*  LineChart.css */
-.line-chart-container {
-  width: 40%;
-  max-width: 800px;
-  margin: 30px ;
-  padding: 30px;
-  background: #fdfdfd;
- 
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 600px) {
-  .line-chart-container {
-    padding: 10px;
+.line-chart {
+    width: 100%;
+    height: 300px;
   }
-} 
-
+  
+  .no-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #888;
+    font-size: 16px;
+  }
+  
+  .custom-tooltip {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tooltip-year {
+    margin: 0 0 8px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .recharts-default-legend .recharts-legend-item {
+    margin-right: 15px !important;
+  }

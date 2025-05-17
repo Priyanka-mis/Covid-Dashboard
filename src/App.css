@@ -1,36 +1,17 @@
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #bfdbfe; 
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-#root {
-  padding: 1rem;
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #D6E9FF;
+  color: #333;
 }
 
-.app-container{
-  margin-left: 80px;
-  margin-right: 80px;
-}
-
-.filters-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-
-}
-
-.stats-cards{
-    display: flex;
-    gap: 3rem;
-    margin-left: 2rem;
-    margin-top: 20px;
-    margin-right: 25rem;
-}
-
-.charts-container{
-  display: flex;
-  margin-top: 30px;
+.app {
+  min-height: 100vh;
 }

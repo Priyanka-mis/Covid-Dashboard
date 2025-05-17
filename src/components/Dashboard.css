@@ -1,0 +1,106 @@
+.dashboard {
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    margin-left: 200px;
+    margin-right: 200px;
+    /* padding: 20px; */
+    min-height: 100vh;
+    /* background-color: red; */
+  }
+  .main-dashboard{
+    width: 950px;
+    margin: auto;
+    padding: 20px;
+
+  }
+  .dashboard h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+  
+  .dashboard-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+   
+  }
+  
+  .stat-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    margin-bottom: 30px;
+    
+  }
+  
+  .charts-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .chart {
+    flex: 1;
+    border-radius: 10px;
+    
+  }
+  
+  .lineChart {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+    margin-left: 36px;
+  }
+  .pieChart{
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+    margin-left: 101px;
+
+  }
+  
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 18px;
+    color: #888;
+  }
+  
+  .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 18px;
+    color: #e53935;
+    text-align: center;
+    padding: 20px;
+  }
+
+
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .dashboard-filters {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .stat-cards {
+      flex-direction: column;
+    }
+    
+    .charts-container {
+      flex-direction: column;
+    }
+  }

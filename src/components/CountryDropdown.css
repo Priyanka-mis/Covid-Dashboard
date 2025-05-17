@@ -1,0 +1,44 @@
+
+ .country-dropdown {
+    position: relative;
+  }
+  
+  .search-icon {
+   position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none; 
+  }
+  
+  .select-container {
+    width: 590px;
+    
+    border-radius: 50px;
+  }
+  
+  .country-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+  }
+  
+  .country-flag {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+  }
+  .search-con{
+    padding-left: 50px;
+    
+
+  }
+  
+
+  .select-container .css-1s2u09g-control,
+  .select-container .css-1pahdxg-control {
+    padding-left: 25px;
+  }
+
