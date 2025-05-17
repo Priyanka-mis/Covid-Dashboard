@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const fetchHistoricalData = async (country = 'usa', days = 1500) => {
   try {
