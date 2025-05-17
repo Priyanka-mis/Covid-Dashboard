@@ -9,9 +9,9 @@ const PieChart = ({ data }) => {
   }
 
   const chartData = [
-        { name: 'Total Population', value: data.population - data.active - data.recovered - data.deaths, color: '#F2C078' },
-        { name: 'Recovered', value: data.recovered, color: 'rgb(10 212 79)' },
-        { name: 'Deaths', value: data.deaths, color: 'rgb(255 67 67)' }
+        { name: 'Total Population', value: data.population - data.active - data.recovered - data.deaths, color: '#F2C078', fontSize:'14px' },
+        { name: 'Recovered', value: data.recovered, color: 'rgb(10 212 79)', fontSize:'14px' },
+        { name: 'Deaths', value: data.deaths, color: 'rgb(255 67 67)', fontSize:'14px' }
       ];
       
 
