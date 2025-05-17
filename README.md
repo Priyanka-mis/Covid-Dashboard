@@ -27,7 +27,14 @@ A responsive and interactive COVID-19 Dashboard built using **React** and **Vite
 
 ### Installation
 
-```bash
+# Clone the repository
 git clone https://github.com/your-username/covid-dashboard.git
+
+# Go into the project directory
 cd covid-dashboard
+
+# Install dependencies
 npm install
+
+# Run the project locally
+npm run dev
